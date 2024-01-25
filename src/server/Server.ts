@@ -1,8 +1,10 @@
 import express from 'express'
+import 'dotenv/config'
+import { router } from './routes' // Quando se chama a pasta routes, o node entende automáticamente que o arquivo index dentro dela deve ser referênciado  
 
 const server = express()
-server.get('/', (req, res) => {
-    return res.send('Olá, DEV!')
-})
+
+server.use(express.json()) // Informa o express que estamos trabalhando com json
+server.use(router)
 
 export { server }

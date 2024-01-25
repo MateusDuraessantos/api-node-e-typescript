@@ -1,0 +1,4 @@
+npm i yarn
+yarn tsc --init
+
+npm add dotenv
