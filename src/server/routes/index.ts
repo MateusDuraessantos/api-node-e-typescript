@@ -1,17 +1,15 @@
 import Router from 'express'
 import { StatusCodes } from 'http-status-codes' // tradução dos códigos de resposta em requisições http
 
+import { CidadesController } from "../controllers";
+
 const router = Router()
 
-router.get('/', (req, res) => {
+router.get('/', (_, res) => {
     return res.send('Olá, start!')
 })
 
-router.post('/teste', (req, res) => {
-    console.log(req.cookies)
-    
-    return res.status(StatusCodes.UNAUTHORIZED).json(req.body) // res.json() faz o express tratar os headers na resposta para o frontend poder trabalhar melhor
-})
+router.post('/cidades', CidadesController.create)
 
 
 export { router }
