@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.server = void 0;
 const express_1 = __importDefault(require("express"));
 require("dotenv/config");
+require("./shared/services/translationsYup");
 const routes_1 = require("./routes"); // Quando se chama a pasta routes, o node entende automáticamente que o arquivo index dentro dela deve ser referênciado  
 const server = (0, express_1.default)();
 exports.server = server;
